@@ -82,7 +82,7 @@ namespace EmployeeTaskManagement.Application.Services
         public async Task<byte[]> GetDocumentFileAsync(int id)
         {
             var document = await _documentRepository.GetByIdAsync(id);
-            if (document != null && System.IO.File.Exists(document.FilePath))
+            if (document != null && File.Exists(document.FilePath))
             {
                 return await File.ReadAllBytesAsync(document.FilePath);
             }

@@ -35,7 +35,7 @@ if (app.Environment.IsEnvironment("Local"))
     var services = scope.ServiceProvider;
     try
     {
-        //DataSeeder.Reseed(services);
+        DataSeeder.Reseed(services);
         DataSeeder.Seed(services);
     }
     catch (Exception ex)
