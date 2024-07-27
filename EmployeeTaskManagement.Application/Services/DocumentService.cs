@@ -57,7 +57,9 @@ namespace EmployeeTaskManagement.Application.Services
                 {
                     FileName = file.FileName,
                     FilePath = filePath,
-                    TaskId = taskId
+                    TaskId = taskId,
+                    UploadedDate = DateTime.Now,
+                    FileSize = file.Length
                 };
 
                 await _documentRepository.AddAsync(document);

@@ -66,9 +66,9 @@ namespace EmployeeTaskManagement.Application.Services
                         .Where(t => g.Select(u => u.UserId).Contains(t.UserId))
                         .Select(task => _mapper.Map<TaskDto>(task))
                         .ToList(),
-                    TotalTasks = tasks.Count(),
-                    CompletedTasks = tasks.Count(t => t.IsCompleted),
-                    PendingTasks = tasks.Count(t => !t.IsCompleted)
+                    TotalTasks = tasks.Where(t => g.Select(u => u.UserId).Contains(t.UserId)).Count(),
+                    CompletedTasks = tasks.Where(t => g.Select(u => u.UserId).Contains(t.UserId)).Count(t => t.IsCompleted),
+                    PendingTasks = tasks.Where(t => g.Select(u => u.UserId).Contains(t.UserId)).Count(t => !t.IsCompleted)
                 })
                 .ToList();
 
