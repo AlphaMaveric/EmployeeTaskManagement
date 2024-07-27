@@ -1,7 +1,6 @@
 ﻿using EmployeeTaskManagement.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System.Threading.Tasks;
 
 
 namespace EmployeeTaskManagement.Infrastructure.Data
@@ -17,10 +16,10 @@ namespace EmployeeTaskManagement.Infrastructure.Data
 
                 if (context.Users.Any())
                 {
-                    return;  
+                    return;
                 }
 
-                SeedData(context);                
+                SeedData(context);
             }
         }
 
@@ -107,7 +106,7 @@ namespace EmployeeTaskManagement.Infrastructure.Data
             };
 
             context.Users.Add(manager);
-            context.Users.AddRange(employee,employee2,employee3,employee4,employee5,employee6,employee7);
+            context.Users.AddRange(employee, employee2, employee3, employee4, employee5, employee6, employee7);
             context.SaveChanges();
 
             context.Tasks.AddRange(new EmployeeTask
@@ -188,7 +187,7 @@ namespace EmployeeTaskManagement.Infrastructure.Data
 
         }
 
-            private static void ClearData(ApplicationDbContext context)
+        private static void ClearData(ApplicationDbContext context)
         {
             context.Tasks.RemoveRange(context.Tasks);
             context.Users.RemoveRange(context.Users);

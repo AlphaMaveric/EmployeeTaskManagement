@@ -29,7 +29,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 
-if(app.Environment.IsEnvironment("Local"))
+if (app.Environment.IsEnvironment("Local"))
 {
     using var scope = app.Services.CreateScope();
     var services = scope.ServiceProvider;

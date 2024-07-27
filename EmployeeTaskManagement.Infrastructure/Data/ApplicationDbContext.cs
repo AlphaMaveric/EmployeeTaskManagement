@@ -1,6 +1,5 @@
 ﻿using EmployeeTaskManagement.Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
 
 namespace EmployeeTaskManagement.Infrastructure.Data
 {
@@ -20,7 +19,7 @@ namespace EmployeeTaskManagement.Infrastructure.Data
                 .HasKey(task => task.TaskId);
 
             modelBuilder.Entity<User>()
-                .HasKey(u => u.UserId); 
+                .HasKey(u => u.UserId);
 
             modelBuilder.Entity<EmployeeTask>()
                 .HasOne(et => et.User)

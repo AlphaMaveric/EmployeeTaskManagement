@@ -3,11 +3,6 @@ using EmployeeTaskManagement.Application.DTOs;
 using EmployeeTaskManagement.Application.Interfaces;
 using EmployeeTaskManagement.Core.Entities;
 using EmployeeTaskManagement.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeTaskManagement.Application.Services
 {

@@ -1,6 +1,5 @@
 ﻿using EmployeeTaskManagement.Application.DTOs;
 using EmployeeTaskManagement.Application.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeTaskManagement.Api.Controllers
@@ -30,10 +29,10 @@ namespace EmployeeTaskManagement.Api.Controllers
             return Ok(report);
         }
 
-        [HttpGet("team/{teamId}")]
-        public async Task<ActionResult<ReportDto>> GetTeamReport(int teamId)
+        [HttpGet("manager/{managerId}")]
+        public async Task<ActionResult<ReportDto>> GetTeamReport(int managerId)
         {
-            var report = await _reportService.GetTeamReportAsync(teamId);
+            var report = await _reportService.GetTeamReportAsync(managerId);
             return Ok(report);
         }
 

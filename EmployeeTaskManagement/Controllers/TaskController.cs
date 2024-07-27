@@ -1,7 +1,5 @@
 ﻿using EmployeeTaskManagement.Application.DTOs;
 using EmployeeTaskManagement.Application.Interfaces;
-using EmployeeTaskManagement.Application.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeTaskManagement.Api.Controllers
@@ -112,6 +110,6 @@ namespace EmployeeTaskManagement.Api.Controllers
             var document = await _documentService.GetDocumentByIdAsync(documentId);
             return File(fileData, "application/octet-stream", document.FileName);
         }
-        
+
     }
 }
